@@ -182,19 +182,19 @@ public class MainActivity extends AppCompatActivity {
 //
 //            }
 //        };
-        Observable observable=Observable.create(new ObservableOnSubscribe<Object>() {
-            @Override
-            public void subscribe(@NonNull ObservableEmitter<Object> emitter) throws Throwable {
-                for (int i = 0; i < 5; i++) {
-                    if(i==3)
-                emitter.onNext(3/0);
-              else
-                  emitter.onNext(i);
-
-            }
-                emitter.onComplete();
-            }
-        });
+//        Observable observable=Observable.create(new ObservableOnSubscribe<Object>() {
+//            @Override
+//            public void subscribe(@NonNull ObservableEmitter<Object> emitter) throws Throwable {
+//                for (int i = 0; i < 5; i++) {
+//                    if(i==3)
+//                emitter.onNext(3/0);
+//              else
+//                  emitter.onNext(i);
+//
+//            }
+//                emitter.onComplete();
+//            }
+//        });
 //        Observable observable=Observable.just(0,1,2,3,4,5,6,7,8,9);
 //        Integer []list=new Integer[5];
 //        for (int i = 0; i < 5; i++) {
@@ -202,28 +202,28 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        Observable observable=Observable.fromArray(list).repeat(2);
 //        Observable observable=Observable.range(0,5);
-        Observer observer=new Observer() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-                Log.d(TAG,"on subscribe :");
-            }
-
-            @Override
-            public void onNext(@NotNull Object o) {
-                Log.d(TAG,"on Next :"+o);
-            }
-
-            @Override
-            public void onError(@NonNull Throwable e) {
-                Log.d(TAG,"on error :"+e.getMessage());
-            }
-
-            @Override
-            public void onComplete() {
-                Log.d(TAG,"on Complete :");
-            }
-        };
-            observable.subscribe(observer);
+//        Observer observer=new Observer() {
+//            @Override
+//            public void onSubscribe(@NonNull Disposable d) {
+//                Log.d(TAG,"on subscribe :");
+//            }
+//
+//            @Override
+//            public void onNext(@NotNull Object o) {
+//                Log.d(TAG,"on Next :"+o);
+//            }
+//
+//            @Override
+//            public void onError(@NonNull Throwable e) {
+//                Log.d(TAG,"on error :"+e.getMessage());
+//            }
+//
+//            @Override
+//            public void onComplete() {
+//                Log.d(TAG,"on Complete :");
+//            }
+//        };
+//            observable.subscribe(observer);
 
     }
 
